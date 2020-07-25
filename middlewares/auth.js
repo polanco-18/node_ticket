@@ -1,5 +1,6 @@
 import tokenService from '../services/token';
 export default {
+    //metodos que consumen el servio/token que valida que la sesion no pase de 1Hora
     verifyUsuario: async (req, res, next) => {
         if (!req.headers.token) {
             return res.status(404).send({

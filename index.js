@@ -11,6 +11,8 @@ import path from 'path';
 //importar rutas
 import router from './routes';
 
+//se declara como arranca el programa y que puerto y librerias 
+
 //conexion a la base de datos
 mongoose.Promise = global.Promise;
 const dburl = 'mongodb://localhost:27017/dbticket';

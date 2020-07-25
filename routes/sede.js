@@ -2,7 +2,7 @@ import routerx from 'express-promise-router';
 import sedeController from '../controllers/SedeController';
 //restriccion de rutas
 import auth from '../middlewares/auth';
-
+//aca declaras las rutas y llamas al metodo en controllers
 const router=routerx();
 //router.post('/add',auth.verifyAlmacenero,sedeController.add);
 router.post('/add',sedeController.add);

@@ -1,5 +1,5 @@
 import mongoose,{Schema} from 'mongoose';
-
+//crear como son las variables apra la base de datos 
 const sedeSchema = new Schema({ 
     codigo:{type:String, maxlength:64},
     nombre:{type:String, maxlength:50,unique:true,required:true},

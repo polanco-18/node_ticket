@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import models from '../models';
-
+//aca es el token, no toquen nada jajaja
 async function checkToken(token) {
     let __id = null;
     try {

@@ -1,5 +1,6 @@
 import models from '../models'; 
-
+ //se declara los metodos para la conexion con mongo db
+ 
 export default {
     add: async (req, res, next) => {
         try { 
