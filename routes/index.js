@@ -6,6 +6,7 @@ const router=routerx();
  //aca declaras las carpetas principales para crear el api rest para postman
  
 router.use('/sede',sedeRouter);
+router.use('/servicio',servicioRouter);
 router.use('/usuario',usuarioRouter);
 router.use('/equipo',equipoRouter);
 router.use('/asigusuario',asigusuarioRouter);
