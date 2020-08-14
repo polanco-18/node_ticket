@@ -11,5 +11,6 @@ router.use('/usuario',usuarioRouter);
 router.use('/equipo',equipoRouter);
 router.use('/asigusuario',asigusuarioRouter);
 router.use('/ticket',ticketRouter);
+router.use('/tipoticket',tipoticketRouter);
 router.use('/detalleticket',detalleticketRouter);
 export default router;
