@@ -7,4 +7,8 @@ const router=routerx();
  
 router.use('/sede',sedeRouter);
 router.use('/usuario',usuarioRouter);
+router.use('/equipo',equipoRouter);
+router.use('/asigusuario',asigusuarioRouter);
+router.use('/ticket',ticketRouter);
+router.use('/detalleticket',detalleticketRouter);
 export default router;
