@@ -1,6 +1,7 @@
 import mongoose,{Schema} from 'mongoose';
 
 const usuarioSchema = new Schema({
+    codigo:{type:String, maxlength:64},
     rol:{type:String, maxlength:30, required: true},
     nombre:{type:String, maxlength:50,unique:true,required:true},
     apellido_paterno:{type:String, maxlength:50,unique:true,required:true}, 
