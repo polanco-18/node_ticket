@@ -1,7 +1,7 @@
 import mongoose,{Schema} from 'mongoose';
 
 const ticketSchema = new Schema({
-    codigo:{type:String, maxlength:64, required: true},
+    codigo:{type:String, maxlength:64},
     numero:{type:String, maxlength:16,unique:true,required:true},
     usuario:{type: Schema.ObjectId, ref:'usuario'},
     tipoticket:{type: Schema.ObjectId, ref:'tipoticket'},

@@ -3,9 +3,10 @@ import mongoose,{Schema} from 'mongoose';
 const usuarioSchema = new Schema({
     rol:{type:String, maxlength:30, required: true},
     nombre:{type:String, maxlength:50,unique:true,required:true},
-    apellido:{type:String, maxlength:50,unique:true,required:true},
+    apellido_paterno:{type:String, maxlength:50,unique:true,required:true}, 
+    apellido_materno:{type:String, maxlength:50,unique:true,required:true}, 
     tipo_documento:{type:String, maxlength:20,required:true},
-    num_documento:{type:String, maxlength:20,required:true}, 
+    num_documento:{type:String, maxlength:30,required:true}, 
     telefono:{type:String, maxlength:20,required:true},
     email:{type:String, maxlength:50,unique:true,required:true},
     password:{type:String,maxlength:64,required:true},

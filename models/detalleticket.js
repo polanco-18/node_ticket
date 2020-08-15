@@ -1,7 +1,7 @@
 import mongoose,{Schema} from 'mongoose';
 
-const ticketSchema = new Schema({
-    codigo:{type:String, maxlength:64, required: true},
+const detalleTicketSchema = new Schema({
+    codigo:{type:String, maxlength:64},
 	ticket:{type: Schema.ObjectId, ref:'ticket'},
 	descripcion:{type:String, maxlength:300, required: true},
 	cola:{type:String, maxlength:30, required: true},
@@ -14,6 +14,6 @@ const ticketSchema = new Schema({
     createAt:{type:Date,default:Date.now}
 });
 
-const Ticket = mongoose.model('ticket',ticketSchema);
+const detalleTicket = mongoose.model('detalleTicket',detalleTicketSchema);
 
-export default Ticket;
+export default detalleTicket;

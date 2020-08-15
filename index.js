@@ -33,7 +33,7 @@ app.use('/ticket', router);
 
 
 //Asignando puerto 3000
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 
 app.listen(app.get('port'), () => {
     console.log('Server on port ' + app.get('port'));

@@ -1,7 +1,6 @@
 {
   "name": "ticket_vue_node",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -19,10 +18,19 @@
     "express": "^4.17.1",
     "express-promise-router": "^4.0.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.25",
+    "mongoose": "^5.10.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polanco-18/node_ticket.git"
+  },
+  "bugs": {
+    "url": "https://github.com/polanco-18/node_ticket/issues"
+  },
+  "homepage": "https://github.com/polanco-18/node_ticket#readme",
+  "description": ""
 }

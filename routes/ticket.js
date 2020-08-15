@@ -1,5 +1,5 @@
 import routerx from 'express-promise-router';
-import sedeController from '../controllers/TicketController';
+import ticketController from '../controllers/TicketController';
 //restriccion de rutas
 import auth from '../middlewares/auth';
 //aca declaras las rutas y llamas al metodo en controllers
