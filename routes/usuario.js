@@ -3,8 +3,7 @@ import usuarioController from '../controllers/UsuarioController';
 //restriccion de rutas
 import auth from '../middlewares/auth';
 
-const router=routerx();
-//router.get('/query',auth.verifyAdministrador,usuarioController.query);
+const router=routerx(); 
 router.post('/add', usuarioController.add);
 router.get('/query',usuarioController.query);
 router.get('/list',usuarioController.list);
