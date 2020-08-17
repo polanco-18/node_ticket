@@ -33,7 +33,7 @@ export default {
     list: async (req, res, next) => {
         try {
             let valor = req.query.valor;
-            const reg = await models.Servicio.find({ $or: [{ 'nombre': new RegExp(valor, 'i') }]}, { createAt: 0 })
+            const reg = await models.Servicio.find({ $or: [{ 'nombre': new RegExp(valor, 'i') }, {'campaña': new RegExp(valor, 'i') }, {'descripcion': new RegExp(valor, 'i') }]}, { createAt: 0 })
                 .sort({ 'createAt': -1 });
             res.status(200).json(reg);
         } catch (e) {
@@ -45,7 +45,7 @@ export default {
     },
     update: async (req, res, next) => {
         try { 
-            const reg = await models.Servicio.findByIdAndUpdate({ _id: req.body._id }, {nombre: req.body.nombre});
+            const reg = await models.Servicio.findByIdAndUpdate({ _id: req.body._id }, {campaña: req.body.campaña ,nombre: req.body.nombre, descripcion: req.body.descripcion});
             res.status(200).json(reg);
         } catch (e) {
             res.status(500).send({
@@ -64,5 +64,27 @@ export default {
             });
             next(e);
         }
-    }
+    },
+    activate: async (req, res, next) => {
+        try {
+            const reg = await models.Servicio.findByIdAndUpdate({ _id: req.body._id }, { estado: 1 });
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Ocurrio un error'
+            });
+            next(e);
+        }
+    },
+    desactivate: async (req, res, next) => {
+        try {
+            const reg = await models.Servicio.findByIdAndUpdate({ _id: req.body._id }, { estado: 0 });
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Ocurrio un error'
+            });
+            next(e);
+        }
+    } 
 }

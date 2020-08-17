@@ -10,5 +10,7 @@ router.get('/query',servicioController.query);
 router.get('/list',servicioController.list);
 router.put('/update',servicioController.update);
 router.delete('/remove',servicioController.remove); 
+router.put('/activate',servicioController.activate);
+router.put('/desactivate',servicioController.desactivate);
 
 export default router;
