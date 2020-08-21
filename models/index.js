@@ -3,6 +3,7 @@ import Sede from './sede';
 import Equipo from './equipo';
 import Servicio from './servicio';
 import Ticket from './ticket';
+import AsigUsuario from './asigUsuario';
  
 
 export default{ 
@@ -11,5 +12,6 @@ export default{
     Sede,
     Equipo,
     Servicio,
-    Ticket 
+    Ticket,
+    AsigUsuario 
 }

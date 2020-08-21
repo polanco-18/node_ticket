@@ -2,6 +2,7 @@ import routerx from 'express-promise-router';
 import servicioRouter from './servicio'; 
 import sedeRouter from './sede'; 
 import usuarioRouter from './usuario'; 
+import asigUsuarioRouter from './asigUsuario';
 import ticketRouter from './ticket'; 
 import equipoRouter from './equipo';
 
@@ -11,6 +12,7 @@ const router=routerx();
 router.use('/sede',sedeRouter);
 router.use('/servicio',servicioRouter);
 router.use('/usuario',usuarioRouter);
+router.use('/asigUsuario',asigUsuarioRouter);
 router.use('/equipo',equipoRouter); 
 router.use('/ticket',ticketRouter); 
 export default router;
