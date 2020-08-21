@@ -2,8 +2,7 @@ import Usuario from './usuario';
 import Sede from './sede';
 import Equipo from './equipo';
 import Servicio from './servicio';
-import Ticket from './ticket';
-import AsigUsuario from './asigUsuario';
+import Ticket from './ticket'; 
 import Tipoticket from './tipoticket';
  
 
@@ -13,7 +12,6 @@ export default{
     Sede,
     Equipo,
     Servicio,
-    Ticket,
-    AsigUsuario, 
+    Ticket,  
     Tipoticket 
 }

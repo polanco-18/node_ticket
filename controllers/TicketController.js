@@ -15,7 +15,8 @@ export default {
         try {
             const reg=await models.Ticket.findOne({_id:req.query._id})
             .populate('usuario',{email:1})
-            .populate('asigUsuario',{sede:1})
+            .populate('sede',{nombre:1})
+            .populate('servicio',{nombre:1})
 			.populate('tipoticket',{nombre:1})
 			.populate('equipo',{tipo:1});
             if (!reg){
@@ -38,7 +39,8 @@ export default {
             let valor=req.query.valor;
             const reg=await models.Ticket.find({$or:[{'descripcion':new RegExp(valor,'i')},{'comentario':new RegExp(valor,'i')}]},{createdAt:0})            
             .populate('usuario',{email:1})
-            .populate('asigUsuario',{sede:1})
+            .populate('sede',{nombre:1})
+            .populate('servicio',{nombre:1})
 			.populate('tipoticket',{nombre:1})
 			.populate('equipo',{tipo:1})
             .sort({'createdAt':-1});
