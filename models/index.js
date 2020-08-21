@@ -4,6 +4,7 @@ import Equipo from './equipo';
 import Servicio from './servicio';
 import Ticket from './ticket';
 import AsigUsuario from './asigUsuario';
+import Tipoticket from './tipoticket';
  
 
 export default{ 
@@ -13,5 +14,6 @@ export default{
     Equipo,
     Servicio,
     Ticket,
-    AsigUsuario 
+    AsigUsuario, 
+    Tipoticket 
 }
