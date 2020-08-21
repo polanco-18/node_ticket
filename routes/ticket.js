@@ -8,7 +8,5 @@ const router=routerx();
 router.post('/add',ticketController.add);
 router.put('/update',ticketController.update);
 router.get('/query',ticketController.query);
-router.get('/list',ticketController.list);
-//extras
-router.get('/listsede',ticketController.listsede);
+router.get('/list',ticketController.list); 
 export default router;

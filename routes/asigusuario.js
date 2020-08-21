@@ -8,6 +8,7 @@ const router=routerx();
 router.post('/add',asigUsuarioController.add);
 router.get('/query',asigUsuarioController.query);
 router.get('/list',asigUsuarioController.list);
+router.get('/listCliente',asigUsuarioController.listCliente);
 router.put('/update',asigUsuarioController.update);
 router.delete('/remove',asigUsuarioController.remove);
 router.put('/activate',asigUsuarioController.activate);

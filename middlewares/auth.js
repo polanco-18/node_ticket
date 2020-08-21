@@ -8,7 +8,7 @@ export default {
             });
         }
         const response = await tokenService.decode(req.headers.token);
-        if (response.rol == 'admin' || response.rol == 'Vendedor' || response.rol == 'Almacenero') {
+        if (response.rol == 'admin' || response.rol == 'Cliente' || response.rol == 'Coordinador') {
             next();
         }else{
             return res.status(403).send({

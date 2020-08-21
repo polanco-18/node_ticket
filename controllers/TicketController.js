@@ -14,7 +14,8 @@ export default {
     query: async (req,res,next) => {
         try {
             const reg=await models.Ticket.findOne({_id:req.query._id})
-            .populate('usuario',{usuario:3})
+            .populate('usuario',{email:1})
+            .populate('asigUsuario',{sede:1})
 			.populate('tipoticket',{nombre:1})
 			.populate('equipo',{tipo:1});
             if (!reg){
@@ -35,8 +36,11 @@ export default {
 	list: async (req,res,next) => {
         try {
             let valor=req.query.valor;
-            const reg=await models.Articulo.find({$or:[{'nombre':new RegExp(valor,'i')},{'descripcion':new RegExp(valor,'i')}]},{createdAt:0})
-            .populate('categoria',{nombre:1})
+            const reg=await models.Ticket.find({$or:[{'descripcion':new RegExp(valor,'i')},{'comentario':new RegExp(valor,'i')}]},{createdAt:0})            
+            .populate('usuario',{email:1})
+            .populate('asigUsuario',{sede:1})
+			.populate('tipoticket',{nombre:1})
+			.populate('equipo',{tipo:1})
             .sort({'createdAt':-1});
             res.status(200).json(reg);
         } catch(e){
@@ -48,21 +52,7 @@ export default {
     },
     update: async (req,res,next) => {
         try {
-            const reg = await models.Articulo.findByIdAndUpdate({_id:req.body._id},{categoria:req.body.categoria,codigo:req.body.codigo,nombre:req.body.nombre,descripcion:req.body.descripcion,precio_venta:req.body.precio_venta,stock:req.body.stock});
-            res.status(200).json(reg);
-        } catch(e){
-            res.status(500).send({
-                message:'Ocurrió un error'
-            });
-            next(e);
-        }
-    },
-	listsede: async (req,res,next) => {
-        try {
-            let valor=req.query.valor;
-            const reg=await models.Articulo.find({$or:[{'nombre':new RegExp(valor,'i')},{'descripcion':new RegExp(valor,'i')}]},{createdAt:0})
-            .populate('categoria',{nombre:1})
-            .sort({'createdAt':-1});
+            const reg = await models.Ticket.findByIdAndUpdate({_id:req.body._id},{categoria:req.body.categoria,codigo:req.body.codigo,nombre:req.body.nombre,descripcion:req.body.descripcion,precio_venta:req.body.precio_venta,stock:req.body.stock});
             res.status(200).json(reg);
         } catch(e){
             res.status(500).send({

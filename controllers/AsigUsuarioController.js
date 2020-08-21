@@ -35,7 +35,23 @@ export default {
         try {
             let valor = req.query.valor;
             const reg = await models.AsigUsuario.find({ $or: [{ 'atencion': new RegExp(valor, 'i') }] }, { createAt: 0 })
-                .populate('usuario', { num_documento: 1 }) 
+                .populate('usuario', { nombre: 1 }) 
+                .populate('sede', { nombre: 1 })
+                .populate('servicio', { nombre: 1 })
+                .sort({ 'createdAt': -1 });
+            res.status(200).json(reg);
+        } catch (e) {
+            res.status(500).send({
+                message: 'Ocurrió un error'
+            });
+            next(e);
+        }
+    },
+    listCliente: async (req, res, next) => {
+        try {
+            let valor = req.query.valor;
+            const reg = await models.AsigUsuario.find({ $or: [{ 'atencion': new RegExp(valor, 'i') }] }, { createAt: 0 })
+                .populate('usuario', { email: 1 }) 
                 .populate('sede', { nombre: 1 })
                 .populate('servicio', { nombre: 1 })
                 .sort({ 'createdAt': -1 });
