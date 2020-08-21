@@ -15,6 +15,7 @@ const ticketSchema = new Schema({
     teamViewerClave:{type:String, maxlength:20,required:true},
     propetario:{type:String, maxlength:60},
     estado:{type:String, maxlength:20},
+    atencion:{type:String, maxlength:30},
     comentario:{type:String, maxlength:200},
     createAt:{type:Date,default:Date.now}
 });

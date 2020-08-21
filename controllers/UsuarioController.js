@@ -99,17 +99,22 @@ export default {
         try {
             let user = await models.Usuario.findOne({ email: req.body.email });
             if (user) {
-                let match = await bcrypt.compare(req.body.password, user.password);
-                if (match) {
-                    let tokenReturn = await token.encode(user._id, user.rol, user.email);
-                    res.status(200).json({ user, tokenReturn });
-                } else {
-                    res.status(404).send({
-                        message: 'Password Incorrecto'
+                if (user.estado == 1) {
+                    let match = await bcrypt.compare(req.body.password, user.password);
+                    if (match) {
+                        let tokenReturn = await token.encode(user._id, user.rol, user.email);
+                        res.status(200).json({ user, tokenReturn });
+                    } else {
+                        res.status(404).send({
+                            message: 'Password Incorrecto'
+                        });
+                    }
+                } else
+                    res.status(400).send({
+                        message: 'Cuenta desactivada'
                     });
-                }
             } else {
-                res.status(404).send({
+                res.status(401).send({
                     message: 'No existe usuario'
                 });
             }

@@ -54,7 +54,7 @@ export default {
     },
     update: async (req,res,next) => {
         try {
-            const reg = await models.Ticket.findByIdAndUpdate({_id:req.body._id},{categoria:req.body.categoria,codigo:req.body.codigo,nombre:req.body.nombre,descripcion:req.body.descripcion,precio_venta:req.body.precio_venta,stock:req.body.stock});
+            const reg = await models.Ticket.findByIdAndUpdate({_id:req.body._id},{descripcion:req.body.descripcion,comentario:req.body.comentario,propetario:req.body.propetario,atencion:req.body.atencion,estado:req.body.estado});
             res.status(200).json(reg);
         } catch(e){
             res.status(500).send({

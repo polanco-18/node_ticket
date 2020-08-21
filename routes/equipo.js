@@ -5,12 +5,12 @@ import auth from '../middlewares/auth';
 //aca declaras las rutas y llamas al metodo en controllers
 const router=routerx();
 //router.post('/add',auth.verifyAdministrador,equipoController.add);
-router.post('/add',equipoController.add);
-router.get('/query',equipoController.query);
-router.get('/list',equipoController.list);
-router.put('/update',equipoController.update);
-router.delete('/remove',equipoController.remove);
-router.put('/activate',equipoController.activate);
-router.put('/desactivate',equipoController.desactivate);
+router.post('/add',auth.verifyAdmin, equipoController.add);
+router.get('/query',auth.verifyAdmin,equipoController.query);
+router.get('/list',auth.verifyUsuario,equipoController.list);
+router.put('/update',auth.verifyAdmin,equipoController.update);
+router.delete('/remove',auth.verifyAdmin,equipoController.remove);
+router.put('/activate',auth.verifyAdmin,equipoController.activate);
+router.put('/desactivate',auth.verifyAdmin,equipoController.desactivate);
 
 export default router;
