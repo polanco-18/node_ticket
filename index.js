@@ -15,7 +15,8 @@ import router from './routes';
 
 //conexion a la base de datos
 mongoose.Promise = global.Promise;
-const dburl = 'mongodb://localhost:27017/dbticket';
+//const dburl = 'mongodb://localhost:27017/dbticket';
+const dburl = 'mongodb+srv://polanco:OGTO7pZ3qO3tGLCm@konectabd.4pukg.mongodb.net/dbKonecta?retryWrites=true&w=majority';
 mongoose.connect(dburl, { useCreateIndex: true, useNewUrlParser: true })
     .then(mongoose => console.log('Conectado'))
     .catch(err => console.log(err));
